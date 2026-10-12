@@ -1,6 +1,7 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background: #fff;
+  border-bottom: 8px solid #0b5ed7;
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -41,6 +42,28 @@ header nav[aria-expanded='true'] {
     gap: 0 32px;
     max-width: 1264px;
     padding: 0 32px;
+  }
+
+  header nav .nav-sections {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  header nav .nav-sections ul {
+    display: flex;
+    gap: 36px;
+    font-weight: 600;
+  }
+
+  header nav .nav-tools {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  header nav .nav-tools .icon img {
+    width: 22px;
+    height: 22px;
   }
 }
 
