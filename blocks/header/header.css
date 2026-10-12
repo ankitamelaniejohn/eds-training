@@ -1,4 +1,46 @@
-/* header and nav layout */
+/* ===== header container ===== */
+header {
+  display: block;
+}
+
+@media (width >= 900px) {
+  /* let the header grow to fit topbar + nav (boilerplate fixes it to one row) */
+  header {
+    height: auto;
+  }
+}
+
+/* ===== topbar (blue line) ===== */
+header .topbar {
+  display: none;
+  width: 100%;
+  background: #0b5ed7;
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  header .topbar {
+    display: block;
+  }
+}
+
+header .topbar .section,
+header .topbar .columns-wrapper,
+header .topbar .default-content-wrapper {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+header .topbar p {
+  margin: 0;
+}
+
+header .topbar a:any-link {
+  color: #fff;
+}
+
+/* ===== nav (white line) ===== */
 header .nav-wrapper {
   background: #fff;
   border-bottom: 8px solid #0b5ed7;
@@ -33,7 +75,7 @@ header nav[aria-expanded='true'] {
 
 @media (width >= 900px) {
   header .nav-wrapper {
-    position: relative;
+    position: relative; /* use sticky + top: 0 if you want it to stay on scroll */
   }
 
   header nav {
@@ -160,14 +202,14 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: 200px;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 200px; /* logo size, adjust to taste */
   height: auto;
 }
 
@@ -290,7 +332,30 @@ header nav .nav-sections .nav-drop > button[aria-expanded='false'] + ul {
   }
 }
 
-/* tools */
+/* tools (search icon + Get Quotes button) */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+header nav .nav-tools .default-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+header nav .nav-tools .icon {
+  display: inline-flex;
+}
+
+/* "Get Quotes" button: a bold link in the nav doc */
+header nav .nav-tools a.button:any-link {
+  display: inline-block;
+  margin: 0;
+  padding: 14px 24px;
+  border-radius: 6px;
+  background-color: #0b5ed7;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
 }
