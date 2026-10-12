@@ -37,10 +37,32 @@ header nav[aria-expanded='true'] {
 
   header nav {
     display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
+    justify-content: flex-end !important;
+    align-items: center;
+  }
+
+  /* brand takes the left side, everything else is pushed right */
+  header nav .nav-brand {
+    margin-right: auto !important;
+    flex: 0 0 auto;
+  }
+
+  header nav .nav-sections {
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    text-align: right !important;
+  }
+
+  header nav .nav-sections .default-content-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul {
+    display: flex !important;
+    justify-content: flex-end !important;
+    margin-left: auto;
   }
 }
 
