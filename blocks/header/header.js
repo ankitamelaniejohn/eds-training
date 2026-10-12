@@ -87,19 +87,6 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
- * Builds and appends the top bar to the header block
- * @param {Element} block The header block element
- */
-async function buildTopBar(block) {
-  const fragment = await loadFragment('/topbar');
-  if (!fragment) return;
-  const bar = document.createElement('div');
-  bar.className = 'topbar';
-  while (fragment.firstElementChild) bar.append(fragment.firstElementChild);
-  block.prepend(bar);
-}
-
-/**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
@@ -170,6 +157,4 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
-
-  await buildTopBar(block);
 }
