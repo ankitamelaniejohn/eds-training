@@ -104,9 +104,6 @@ async function buildTopBar(block) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // load topbar as fragment
-  await buildTopBar(block);
-
   // load nav as fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
@@ -173,4 +170,6 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  await buildTopBar(block);
 }
